@@ -30,7 +30,7 @@
         <jjwt.version>0.12.3</jjwt.version>
 
         <!-- Utilities -->
-        <lombok.version>1.18.36</lombok.version>
+        <lombok.version>edge-SNAPSHOT</lombok.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <springdoc.version>2.3.0</springdoc.version>
 
@@ -119,6 +119,20 @@
         </dependencies>
     </dependencyManagement>
 
+    <repositories>
+        <repository>
+            <id>projectlombok.org</id>
+            <url>https://projectlombok.org/edge-releases</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>projectlombok.org</id>
+            <url>https://projectlombok.org/edge-releases</url>
+        </pluginRepository>
+    </pluginRepositories>
+
     <build>
         <pluginManagement>
             <plugins>
@@ -150,6 +164,7 @@
                         <source>${java.version}</source>
                         <target>${java.version}</target>
                         <parameters>true</parameters>
+                        <fork>true</fork>
                         <compilerArgs>
                             <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
                             <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
