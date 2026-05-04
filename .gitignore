@@ -2,3 +2,7 @@ target/
 .idea/
 *.iml
 .DS_Store
+
+# macOS resource forks (added by automated cleanup)
+.DS_Store
+._*
